@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name        celebmasta-hotkey
-// @version     0.0.0.8
+// @version     0.0.0.9
 // @include     https://celebmasta.com*
 // @description Better celebmasta nvigation
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js
+// @require     https://raw.githubusercontent.com/js-cookie/js-cookie/master/src/js.cookie.js
 // @updateURL   https://github.com/Madagambada/userscripts/raw/master/celebmasta-hotkey.user.js
 // @downloadURL https://github.com/Madagambada/userscripts/raw/master/celebmasta-hotkey.user.js
 // @grant       GM_getValue
@@ -44,7 +45,8 @@ document.addEventListener('keydown', function(e) {
 if ((RegExp('celebmasta.com').test(window.location.href)) || (RegExp('celebmasta.com/page/*').test(window.location.href))) {
 var NP = $("a:contains('Next page')");
 var PP = $("a:contains('Previous page')");
-
+Cookies.set('cj_pu', '1');
+  
 (function(){
 document.addEventListener('keydown', function(e) {
   if (e.keyCode == 39 || e.keyCode == 68) {
