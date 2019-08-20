@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name        celebmasta-hotkey
-// @version     0.0.0.9
+// @version     0.0.0.10a
 // @include     https://celebmasta.com*
 // @description Better celebmasta nvigation
-// @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js
+// @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
 // @require     https://raw.githubusercontent.com/js-cookie/js-cookie/master/src/js.cookie.js
 // @updateURL   https://github.com/Madagambada/userscripts/raw/master/celebmasta-hotkey.user.js
 // @downloadURL https://github.com/Madagambada/userscripts/raw/master/celebmasta-hotkey.user.js
@@ -26,6 +26,12 @@
 //console.log(RegExp('.com/$').test(window.location.href));
 //console.log(RegExp('celebmasta.com/page/*').test(window.location.href));
 //console.log(RegExp('celebmasta.com/*\d/*/$').test(window.location.href));
+
+var FEATURED1 = $( "article[class*='sticky category-celeb-nudes']" );
+var FEATURED2 = $( "article[class*='sticky category-youtubers']" );
+
+FEATURED1.toggle();
+FEATURED2.toggle();
 
 if (RegExp('celebmasta.com/*/*/').test(window.location.href))  {
 var NGrI = $("a:contains('Next Image')");
@@ -55,5 +61,10 @@ document.addEventListener('keydown', function(e) {
   else if (e.keyCode == 37 || e.keyCode == 65) {
    window.location = PP[0].href;
   }
+   else if (e.keyCode == 38) {
+   FEATURED1.toggle();
+   FEATURED2.toggle();
+
+  } 
 }, false);
 })();}
