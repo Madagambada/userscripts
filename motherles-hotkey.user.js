@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name        motherles-hotkey
-// @version     0.0.0.8
+// @version     0.0.0.8a
 // @include     https://motherless.com*
 // @description Better motherles navigation
-// @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js
+// @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
 // @updateURL   https://github.com/Madagambada/userscripts/raw/master/motherles-hotkey.user.js
 // @downloadURL https://github.com/Madagambada/userscripts/raw/master/motherles-hotkey.user.js
 // @grant       GM_getValue
