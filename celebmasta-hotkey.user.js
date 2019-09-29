@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        celebmasta-hotkey
-// @version     0.0.0.10a
+// @version     0.0.0.10b
 // @include     https://celebmasta.com*
 // @description Better celebmasta nvigation
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
@@ -61,7 +61,7 @@ document.addEventListener('keydown', function(e) {
   else if (e.keyCode == 37 || e.keyCode == 65) {
    window.location = PP[0].href;
   }
-   else if (e.keyCode == 38) {
+   else if (e.keyCode == 96) {
    FEATURED1.toggle();
    FEATURED2.toggle();
 
