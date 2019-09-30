@@ -6,22 +6,8 @@
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
 // @updateURL   https://github.com/Madagambada/userscripts/raw/master/motherles-hotkey.user.js
 // @downloadURL https://github.com/Madagambada/userscripts/raw/master/motherles-hotkey.user.js
-// @grant       GM_getValue
-// @grant       GM_setValue
-// @grant       GM_deleteValue
-// @grant       GM_listValues
-// @grant       GM_addValueChangeListener
-// @grant       GM_openInTab
-// @grant       GM_xmlhttpRequest
-// @grant       GM.getValue
-// @grant       GM.setValue
-// @grant       GM.deleteValue
-// @grant       GM.listValues
-// @grant       GM.openInTab
-// @grant       GM.xmlHttpRequest
 // ==/UserScript==
 
-//für Gallerie
 if (RegExp('motherless.com/*/*').test(window.location.href))  {
 var NGaI = $("a:contains('Next →')");
 var PGaI = $("a:contains('← Previous')");
@@ -36,7 +22,6 @@ document.addEventListener('keydown', function(e) {
 }, false);
 })();}
 
-//für Gruppen
 if (RegExp('motherless.com/g/*/*').test(window.location.href))  {
 var NGr = $("a:contains('Next Group')");
 (function(){
