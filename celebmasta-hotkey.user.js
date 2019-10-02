@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name        celebmasta-hotkey-debug
-// @version     0.0.0.11a
+// @name        celebmasta-hotkey
+// @version     0.0.0.11g
 // @include     https://celebmasta.com*
 // @description Better celebmasta nvigation
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
