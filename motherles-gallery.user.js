@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         motherles-gallery
-// @version      0.0.0.1b
+// @version      0.0.0.2b
 // @description  some shitty gallery
 // @author       Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/motherles-gallery.user.js
@@ -12,6 +12,9 @@
 // @resource     css2 https://raw.githubusercontent.com/nanostudio-org/nanogallery2/master/src/css/nanogallery2.woff.css
 // @match        https://motherless.com/term/images/*
 // @match        https://motherless.com/images/*
+// @match        https://motherless.com/live/images
+// @match        https://motherless.com/gi/*
+// @match        https://motherless.com/GI*
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // ==/UserScript==
@@ -26,7 +29,12 @@ var imagesArray3 = [];
 //init
    GM_addStyle(GM_getResourceText("css"));
    GM_addStyle(GM_getResourceText("css2"));
-   jQuery("div[class*='text-center']").append(' <div id="gallery_hook"></div>');
+   if ((RegExp('motherless.com/GI*').test(window.location.href))){
+       $("div[class*='media-action-networks center-margin right']").append(' <div id="gallery_hook"></div>');
+   }
+   else {
+       $('[style*="margin-top: 14px; margin-bottom: 14px;"]').append(' <div id="gallery_hook"></div>');
+   }
 
 //https://forums.digitalpoint.com/threads/how-to-store-all-img-tags-in-one-array-using-jquery.2547757/
    var imagesArray = $("img[class*='static']").map(function() {
@@ -54,6 +62,7 @@ var imagesArray3 = [];
     items: arr2
 
    });
+      console.log(arr2)
   }
  }, false);
 
