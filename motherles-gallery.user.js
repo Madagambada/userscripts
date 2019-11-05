@@ -62,7 +62,6 @@ var imagesArray3 = [];
     items: arr2
 
    });
-      console.log(arr2)
   }
  }, false);
 
