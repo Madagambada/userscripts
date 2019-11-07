@@ -1,12 +1,11 @@
 // ==UserScript==
 // @name         motherless-gallery
-// @version      0.0.0.3c
+// @version      0.0.0.4u
 // @description  gallery for motherless
 // @author       Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
-// @require      https://gist.githubusercontent.com/Madagambada/bffd6e0bce48cdef6afaa9fce75b494c/raw/def23687ce1ee273f6703dff1ad873cb21cbbbf4/gallery.js
 // @require      https://unpkg.com/nanogallery2@2.4.2/dist/jquery.nanogallery2.min.js
 // @resource     css https://unpkg.com/nanogallery2@2.4.2/dist/css/nanogallery2.min.css
 // @resource     css2 https://raw.githubusercontent.com/nanostudio-org/nanogallery2/master/src/css/nanogallery2.woff.css
@@ -74,4 +73,3 @@ var PP = $("a:contains('« PREV')");
    }
   }, false);
  })();
-
