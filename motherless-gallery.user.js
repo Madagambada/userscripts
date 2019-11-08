@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         motherless-gallery
-// @version      0.0.0.4u
+// @version      0.0.0.5d
 // @description  gallery for motherless
 // @author       Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
@@ -18,9 +18,11 @@
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // ==/UserScript==
+// pre init
 var arr2 = []
 var imagesArray2 = [];
 var imagesArray3 = [];
+var galleryload = 0;
 $("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
 var NP = $("a:contains('NEXT »')");
 var PP = $("a:contains('« PREV')");
@@ -31,6 +33,7 @@ var PP = $("a:contains('« PREV')");
 //init
    GM_addStyle(GM_getResourceText("css"));
    GM_addStyle(GM_getResourceText("css2"));
+   galleryload = 1;
 
 //https://forums.digitalpoint.com/threads/how-to-store-all-img-tags-in-one-array-using-jquery.2547757/
    var imagesArray = $("img[class*='static']").map(function() {
@@ -68,7 +71,7 @@ var PP = $("a:contains('« PREV')");
     window.location = NP[0].href;
    } else if (e.keyCode == 97){
        window.location = PP[0].href;
-   } else if (e.keyCode == 98){
+   } else if (e.keyCode == 98 && galleryload == 1){
        $('#gallery_hook').nanogallery2('displayItem', '0/1');
    }
   }, false);
