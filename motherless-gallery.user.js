@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         motherless-gallery
-// @version      0.0.0.5d
+// @version      0.0.0.6g
 // @description  gallery for motherless
 // @author       Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
@@ -29,7 +29,7 @@ var PP = $("a:contains('« PREV')");
 
 (function() {
  document.addEventListener('keydown', function(e) {
-  if (e.keyCode == 96) {
+  if (e.keyCode == 96 && galleryload == 0) {
 //init
    GM_addStyle(GM_getResourceText("css"));
    GM_addStyle(GM_getResourceText("css2"));
