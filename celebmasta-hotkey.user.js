@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        celebmasta-hotkey
-// @version     0.0.0.11g
+// @version     0.0.0.12h
 // @include     https://celebmasta.com*
 // @description Better celebmasta nvigation
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
@@ -9,23 +9,20 @@
 // @downloadURL https://github.com/Madagambada/userscripts/raw/master/celebmasta-hotkey.user.js
 // ==/UserScript==
 
-//--- contains is case-sensitive.
-//console.log(RegExp('.com/$').test(window.location.href));
-//console.log(RegExp('celebmasta.com/page/*').test(window.location.href));
-//console.log(RegExp('celebmasta.com/*\d/*/$').test(window.location.href));
-
+// disable popup by click
 if (Cookies.get('cj_pu') != 1) {
  Cookies.set('cj_pu', '1');
 }
 
+//hide featured article & remove adds by image page
 var FEATURED1 = $("article[class*='sticky category-celeb-nudes']");
 var FEATURED2 = $("article[class*='sticky category-youtubers']");
-var ad1 = $("div[class*='mtsnb-sp-right mtsnb-custom']");
-
 FEATURED1.toggle();
 FEATURED2.toggle();
-ad1.toggle();
+$("a[rel*='nofollow noopener noreferrer']").parent().empty();
 
+
+//hotkey stuff
 if (RegExp('celebmasta.com/*/*/').test(window.location.href)) {
  var NGrI = $("a:contains('Next Image')");
  var NGaI = $("a:contains('Previous Pic')");
@@ -40,7 +37,7 @@ if (RegExp('celebmasta.com/*/*/').test(window.location.href)) {
  })();
 }
 
-//if ((RegExp('celebmasta.com/page/*').test(window.location.href)) || (RegExp('celebmasta.com').test(window.location.href))) {
+//hotkey stuff 2
 if ((RegExp('celebmasta.com').test(window.location.href)) || (RegExp('celebmasta.com/page/*').test(window.location.href))) {
  var NP = $("a:contains('Next page')");
  var PP = $("a:contains('Previous page')");
@@ -54,7 +51,6 @@ if ((RegExp('celebmasta.com').test(window.location.href)) || (RegExp('celebmasta
    } else if (e.keyCode == 96) {
     FEATURED1.toggle();
     FEATURED2.toggle();
-
    }
   }, false);
  })();
