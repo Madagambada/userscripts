@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         motherless-gallery
-// @version      0.0.0.6g
+// @version      0.0.0.7n
 // @description  gallery for motherless
 // @author       Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
@@ -15,9 +15,11 @@
 // @match        https://motherless.com/gi/*
 // @match        https://motherless.com/GI*
 // @match        https://motherless.com/porn/*/images
+// @match        https://motherless.com/f/*/images
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // ==/UserScript==
+
 // pre init
 var arr2 = []
 var imagesArray2 = [];
