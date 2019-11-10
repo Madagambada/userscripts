@@ -8,7 +8,7 @@
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
 // @require      https://unpkg.com/nanogallery2@2.4.2/dist/jquery.nanogallery2.min.js
 // @resource     css https://unpkg.com/nanogallery2@2.4.2/dist/css/nanogallery2.min.css
-// @resource     css2 https://raw.githubusercontent.com/nanostudio-org/nanogallery2/master/src/css/nanogallery2.woff.css
+// @resource     font https://raw.githubusercontent.com/nanostudio-org/nanogallery2/master/src/css/nanogallery2.woff.css
 // @match        https://motherless.com/term/images/*
 // @match        https://motherless.com/images/*
 // @match        https://motherless.com/live/images
@@ -25,16 +25,17 @@ var arr2 = []
 var imagesArray2 = [];
 var imagesArray3 = [];
 var galleryload = 0;
-$("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
 var NP = $("a:contains('NEXT »')");
 var PP = $("a:contains('« PREV')");
+// set hock on the page
+$("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
 
 (function() {
  document.addEventListener('keydown', function(e) {
   if (e.keyCode == 96 && galleryload == 0) {
 //init
    GM_addStyle(GM_getResourceText("css"));
-   GM_addStyle(GM_getResourceText("css2"));
+   GM_addStyle(GM_getResourceText("font"));
    galleryload = 1;
 
 //https://forums.digitalpoint.com/threads/how-to-store-all-img-tags-in-one-array-using-jquery.2547757/
