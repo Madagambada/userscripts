@@ -19,8 +19,6 @@ var FEATURED1 = $("article[class*='sticky category-celeb-nudes']");
 var FEATURED2 = $("article[class*='sticky category-youtubers']");
 FEATURED1.toggle();
 FEATURED2.toggle();
-$("a[rel*='nofollow noopener noreferrer']").parent().empty();
-
 
 //hotkey stuff
 if (RegExp('celebmasta.com/*/*/').test(window.location.href)) {
