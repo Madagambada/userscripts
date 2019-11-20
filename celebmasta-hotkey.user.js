@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        celebmasta-hotkey
-// @version     0.0.0.12h
+// @version     0.0.0.13o
 // @include     https://celebmasta.com*
 // @description Better celebmasta nvigation
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
@@ -19,6 +19,8 @@ var FEATURED1 = $("article[class*='sticky category-celeb-nudes']");
 var FEATURED2 = $("article[class*='sticky category-youtubers']");
 FEATURED1.toggle();
 FEATURED2.toggle();
+$("img[alt*='sexy popular local sluts']").parent().empty();
+$("img[alt*='girls that want to fuck on snap']").parent().empty();
 
 //hotkey stuff
 if (RegExp('celebmasta.com/*/*/').test(window.location.href)) {
@@ -39,7 +41,6 @@ if (RegExp('celebmasta.com/*/*/').test(window.location.href)) {
 if ((RegExp('celebmasta.com').test(window.location.href)) || (RegExp('celebmasta.com/page/*').test(window.location.href))) {
  var NP = $("a:contains('Next page')");
  var PP = $("a:contains('Previous page')");
-
  (function() {
   document.addEventListener('keydown', function(e) {
    if (e.keyCode == 39 || e.keyCode == 68) {
