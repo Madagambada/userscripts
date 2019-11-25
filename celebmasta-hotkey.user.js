@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        celebmasta-hotkey
-// @version     0.0.0.13o
+// @version     0.0.0.14x
 // @include     https://celebmasta.com*
 // @description Better celebmasta nvigation
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
@@ -21,6 +21,7 @@ FEATURED1.toggle();
 FEATURED2.toggle();
 $("img[alt*='sexy popular local sluts']").parent().empty();
 $("img[alt*='girls that want to fuck on snap']").parent().empty();
+$("img[alt*='Famous Adult Apps']").parent().empty();
 
 //hotkey stuff
 if (RegExp('celebmasta.com/*/*/').test(window.location.href)) {
