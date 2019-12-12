@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         motherless-gallery
-// @version      0.0.0.7n
+// @version      0.0.0.8f
 // @description  gallery for motherless
 // @author       Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
@@ -16,6 +16,13 @@
 // @match        https://motherless.com/GI*
 // @match        https://motherless.com/porn/*/images
 // @match        https://motherless.com/f/*/images
+// @match        https://motherless.com/term/videos/*
+// @match        https://motherless.com/videos/*
+// @match        https://motherless.com/live/videos
+// @match        https://motherless.com/gv/*
+// @match        https://motherless.com/GM*
+// @match        https://motherless.com/porn/*/videos
+// @match        https://motherless.com/f/*/videos
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // ==/UserScript==
@@ -24,9 +31,13 @@
 var arr2 = []
 var imagesArray2 = [];
 var imagesArray3 = [];
+var imagesArray4 = [];
+var imagesArray5 = [];
 var galleryload = 0;
 var NP = $("a:contains('NEXT »')");
 var PP = $("a:contains('« PREV')");
+//remove adds
+$("a[href*='efukt']").parent().remove()
 // set hock on the page
 $("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
 
@@ -37,14 +48,15 @@ $("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
    GM_addStyle(GM_getResourceText("css"));
    GM_addStyle(GM_getResourceText("font"));
    galleryload = 1;
-
 //https://forums.digitalpoint.com/threads/how-to-store-all-img-tags-in-one-array-using-jquery.2547757/
    var imagesArray = $("img[class*='static']").map(function() {
     return $(this).attr('data-strip-src');
    }).get();
 
+if ((RegExp('motherless.com/term/images/*').test(window.location.href)) || (RegExp('motherless.com/images/*').test(window.location.href)) || (RegExp('motherless.com/live/images').test(window.location.href)) || (RegExp('motherless.com/gi/*').test(window.location.href)) || (RegExp('motherless.com/GI*').test(window.location.href)) || (RegExp('motherless.com/porn/*/images').test(window.location.href)) || (RegExp('motherless.com/f/*/images').test(window.location.href))) {
 //https://stackoverflow.com/questions/953311/replace-string-in-javascript-array
-     for (var u = 0; u < imagesArray.length; u++) {
+
+    for (var u = 0; u < imagesArray.length; u++) {
     imagesArray2[u] = imagesArray[u].replace('thumbs', 'images');
     imagesArray3[u] = imagesArray2[u].replace('thumbs', 'images');
    }
@@ -52,6 +64,18 @@ $("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
    for (var i = 0; i < imagesArray.length; i++) {
     arr2.push(
         {        src: imagesArray3[i],     srct: imagesArray[i]    });   }
+} else {
+    for (var u = 0; u < imagesArray.length; u++) {
+    imagesArray2[u] = imagesArray[u].replace('strip.jpg', 'small.jpg');
+    imagesArray3[u] = imagesArray2[u].replace('thumbs', 'videos');
+    imagesArray4[u] = imagesArray3[u].replace('-small.jpg?from_helper', '.mp4');
+    imagesArray5[u] = imagesArray4[u].replace('thumbs', 'videos');
+   }
+
+   for (var i = 0; i < imagesArray.length; i++) {
+    arr2.push(
+        {        src: imagesArray5[i],     srct: imagesArray2[i]    });   }
+}
 
  //https://nanogallery2.nanostudio.org/
 
