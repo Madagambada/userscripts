@@ -10,3 +10,6 @@
 
 #### motherless-hotkey:
 * Nummpad 1/3 to get to Next/previous image/video in gallery/Group
+
+#### auto-linkshorter:
+* Automates some link shortener no user activities required beside for reCAPTCHA
