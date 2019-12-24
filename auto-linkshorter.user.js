@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         auto-linkshorter
-// @version      0.0.0.1a
+// @version      0.0.0.2g
 // @match        https://spiin.xyz/*
 // @match        https://cpmlink.net/go/*
 // @match        https://ouo.press/*
@@ -18,7 +18,6 @@ setTimeout(cpmlink, 3000);
 }
 if (RegExp('gusimp.net/*').test(window.location.href)) {
 setTimeout(adfly, 9500);
-$("iframe[scrolling*='no']").hide();
 }
 if (RegExp('ouo.press/*').test(window.location.href)) {
 setTimeout(ouo, 4000);
