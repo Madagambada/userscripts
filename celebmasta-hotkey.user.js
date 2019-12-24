@@ -1,8 +1,9 @@
 // ==UserScript==
 // @name        celebmasta-hotkey
-// @version     0.0.0.14x
+// @version     0.0.0.15j
 // @include     https://celebmasta.com*
 // @description Better celebmasta nvigation
+// @author      Madagambada
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
 // @require     https://github.com/js-cookie/js-cookie/releases/download/v2.2.1/js.cookie-2.2.1.min.js
 // @updateURL   https://github.com/Madagambada/userscripts/raw/master/celebmasta-hotkey.user.js
