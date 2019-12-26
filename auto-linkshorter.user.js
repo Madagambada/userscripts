@@ -48,7 +48,7 @@ function ouo() {
     $("#btn-main").click();
 }
 function bcvc() {
-    window.location = document.title
+    //window.location = document.title
 }
 function exeio() {
     if ($(".link_ready")[0]){
