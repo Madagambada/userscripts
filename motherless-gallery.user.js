@@ -3,7 +3,7 @@
 // @version      0.0.1.1p
 // @description  gallery for motherless
 // @author       Madagambada
-// @namespace    https://github.com/Madagambada/userscripts
+// @namespace    https://github.com/Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
