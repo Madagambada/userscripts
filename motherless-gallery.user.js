@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         motherless-gallery
-// @version      0.0.0.9u
+// @version      0.0.1.0e
 // @description  gallery for motherless
 // @author       Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
@@ -35,6 +35,8 @@ var imagesArray2 = [];
 var imagesArray3 = [];
 var imagesArray4 = [];
 var imagesArray5 = [];
+var imagesArray6 = [];
+var imagesArray7 = [];
 var galleryload = 0;
 var NP = $("a:contains('NEXT »')");
 var PP = $("a:contains('« PREV')");
@@ -61,22 +63,26 @@ if ((RegExp('motherless.com/term/images/*').test(window.location.href)) || (RegE
     for (var u = 0; u < imagesArray.length; u++) {
     imagesArray2[u] = imagesArray[u].replace('thumbs', 'images');
     imagesArray3[u] = imagesArray2[u].replace('thumbs', 'images');
+    imagesArray4[u] = imagesArray3[u].replace('https://cdn5-images.motherlessmedia.com/images/', "<a rel='noopener noreferrer' target='_blank' href='https://motherless.com/");
+    imagesArray5[u] = imagesArray4[u].replace(/.{16}$/, "'>open site in new tab</a>");
    }
 
    for (var i = 0; i < imagesArray.length; i++) {
     arr2.push(
-        {        src: imagesArray3[i],     srct: imagesArray[i]    });   }
+        {        src: imagesArray3[i],     srct: imagesArray[i] ,title: imagesArray5[i]});   }
 } else {
     for (var u = 0; u < imagesArray.length; u++) {
     imagesArray2[u] = imagesArray[u].replace('strip.jpg', 'small.jpg');
     imagesArray3[u] = imagesArray2[u].replace('thumbs', 'videos');
     imagesArray4[u] = imagesArray3[u].replace('-small.jpg?from_helper', '.mp4');
     imagesArray5[u] = imagesArray4[u].replace('thumbs', 'videos');
+    imagesArray6[u] = imagesArray3[u].replace('https://cdn5-videos.motherlessmedia.com/thumbs/', "<a rel='noopener noreferrer' target='_blank' href='https://motherless.com/");
+    imagesArray7[u] = imagesArray6[u].replace('-small.jpg?from_helper', "'>open site in new tab</a>");
    }
 
    for (var i = 0; i < imagesArray.length; i++) {
     arr2.push(
-        {        src: imagesArray5[i],     srct: imagesArray2[i]    });   }
+        {        src: imagesArray5[i],     srct: imagesArray2[i], title: imagesArray7[i]    });   }
 }
 
  //https://nanogallery2.nanostudio.org/
@@ -85,7 +91,10 @@ if ((RegExp('motherless.com/term/images/*').test(window.location.href)) || (RegE
     // ### gallery settings ###
     thumbnailHeight: 150,
     thumbnailWidth: 150,
-
+    allowHTMLinData: true,
+    thumbnailLabel: {
+          "display": false
+        },
     // ### gallery content ###
     items: arr2
 
@@ -105,3 +114,4 @@ if ((RegExp('motherless.com/term/images/*').test(window.location.href)) || (RegE
    }
   }, false);
  })();
+
