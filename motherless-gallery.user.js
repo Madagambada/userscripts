@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         motherless-gallery
 // @version      0.0.1.1p
-// @description  gallery for motherless
+// @description  gallery for motherless.com
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
