@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         motherless-gallery
-// @version      0.0.1.1p
+// @version      0.0.1.2h
 // @description  gallery for motherless.com
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
@@ -58,7 +58,7 @@ $("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
     return $(this).attr('data-strip-src');
    }).get();
 
-if ((RegExp('motherless.com/term/images/*').test(window.location.href)) || (RegExp('motherless.com/images/*').test(window.location.href)) || (RegExp('motherless.com/live/images').test(window.location.href)) || (RegExp('motherless.com/gi/*').test(window.location.href)) || (RegExp('motherless.com/GI*').test(window.location.href)) || (RegExp('motherless.com/porn/*/images').test(window.location.href)) || (RegExp('motherless.com/f/*/images').test(window.location.href))) {
+if ((RegExp('motherless.com/term/images/*').test(window.location.href)) || (RegExp('motherless.com/images/*').test(window.location.href)) || (RegExp('motherless.com/live/images').test(window.location.href)) || (RegExp('motherless.com/gi/*').test(window.location.href)) || (RegExp('motherless.com/GI*').test(window.location.href)) || (RegExp('motherless.com/porn/*/images').test(window.location.href)) || (RegExp('motherless.com/f/*/images').test(window.location.href)) || (RegExp('https://motherless.com/u/*?t=i').test(window.location.href))) {
 //https://stackoverflow.com/questions/953311/replace-string-in-javascript-array
 
     for (var u = 0; u < imagesArray.length; u++) {
