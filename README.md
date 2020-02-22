@@ -13,3 +13,6 @@
 
 #### auto-linkshorter:
 * Automates some link shortener no user activities required beside for reCAPTCHA
+
+#### mangakakalot-hotkey:
+* use arrow key left/right to get on next page
