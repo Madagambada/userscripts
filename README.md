@@ -16,3 +16,6 @@
 
 #### mangakakalot-hotkey:
 * use arrow key left/right to get on next page
+
+### nhentai-hotkey:
+* Numpad 0 to go to page 1
