@@ -31,7 +31,7 @@
 // ==/UserScript==
 
 // pre init
-var arr2 = []
+var arr2 = [];
 var imagesArray2 = [];
 var imagesArray3 = [];
 var imagesArray4 = [];
@@ -109,7 +109,7 @@ console.log("test1");
        }
    } else if (e.keyCode == 97){
        if ($("a[rel*='prev']").length) {
-           window.location = PP
+           window.location = PP;
        }
    } else if (e.keyCode == 98 && galleryload == 1){
        $('#gallery_hook').nanogallery2('displayItem', '0/1');
