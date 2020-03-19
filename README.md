@@ -8,7 +8,7 @@
    * Numpad 2 to get into gallery mode, click on image works to
 * Numpad 1/3 to get to Next/previous site
 
-#### motherless-hotkey:
+#### motherless-hotkey (outdated):
 * Numpad 1/3 to get to Next/previous image/video in gallery/Group
 
 #### auto-linkshorter:
