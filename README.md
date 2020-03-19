@@ -19,3 +19,6 @@
 
 #### nhentai-hotkey:
 * Numpad 0 to go to page 1
+
+#### nexusmods-auto-download-option:
+* auto select slow download
