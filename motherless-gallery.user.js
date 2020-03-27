@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         motherless-gallery
-// @version      0.0.1.4t
+// @version      0.0.1.5o
 // @description  gallery for motherless.com
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
@@ -15,23 +15,23 @@
 // @match        https://motherless.com/live/images
 // @match        https://motherless.com/gi/*
 // @match        https://motherless.com/GI*
-// @match        https://motherless.com/porn/*/images
-// @match        https://motherless.com/f/*/images
-// @match        https://motherless.com/u/*?t=i
+// @match        https://motherless.com/porn/*/images*
+// @match        https://motherless.com/f/*/images*
+// @match        https://motherless.com/u/*t=i
 // @match        https://motherless.com/term/videos/*
 // @match        https://motherless.com/videos/*
 // @match        https://motherless.com/live/videos
 // @match        https://motherless.com/gv/*
 // @match        https://motherless.com/GV*
-// @match        https://motherless.com/porn/*/videos
-// @match        https://motherless.com/f/*/videos
-// @match        https://motherless.com/u/*?t=v
+// @match        https://motherless.com/porn/*/videos*
+// @match        https://motherless.com/f/*/videos*
+// @match        https://motherless.com/u/*t=v
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
 // ==/UserScript==
 
 // pre init
-var arr2 = [];
+var arr2 = []
 var imagesArray2 = [];
 var imagesArray3 = [];
 var imagesArray4 = [];
@@ -109,7 +109,7 @@ console.log("test1");
        }
    } else if (e.keyCode == 97){
        if ($("a[rel*='prev']").length) {
-           window.location = PP;
+           window.location = PP
        }
    } else if (e.keyCode == 98 && galleryload == 1){
        $('#gallery_hook').nanogallery2('displayItem', '0/1');
