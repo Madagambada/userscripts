@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         motherless-gallery
-// @version      0.0.1.5o
+// @version      0.0.1.6l
 // @description  gallery for motherless.com
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
@@ -31,7 +31,7 @@
 // ==/UserScript==
 
 // pre init
-var arr2 = []
+var arr2 = [];
 var imagesArray2 = [];
 var imagesArray3 = [];
 var imagesArray4 = [];
@@ -55,10 +55,12 @@ $("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
    var imagesArray = $("img[class*='static']").map(function() {
     return $(this).attr('data-strip-src');
    }).get();
-
+//filter
+imagesArray = jQuery.grep(imagesArray, function(item) {
+  return item.match(/cdn5-thumbs.motherlessmedia.com\/thumbs\//g) != null;
+});
 if ( (window.location.href.indexOf("/GI") != -1) || (window.location.href.indexOf("/gi/") != -1) || (window.location.href.indexOf("?t=i") != -1) || (window.location.href.indexOf("/images") != -1) ) {
     //https://stackoverflow.com/questions/953311/replace-string-in-javascript-array
-console.log("test1");
     for (var u = 0; u < imagesArray.length; u++) {
     imagesArray2[u] = imagesArray[u].replace('thumbs', 'images');
     imagesArray3[u] = imagesArray2[u].replace('thumbs', 'images');
@@ -109,7 +111,7 @@ console.log("test1");
        }
    } else if (e.keyCode == 97){
        if ($("a[rel*='prev']").length) {
-           window.location = PP
+           window.location = PP;
        }
    } else if (e.keyCode == 98 && galleryload == 1){
        $('#gallery_hook').nanogallery2('displayItem', '0/1');
