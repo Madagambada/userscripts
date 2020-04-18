@@ -48,7 +48,7 @@ if ((RegExp('celebmasta.com').test(window.location.href)) || (RegExp('celebmasta
    } else if (e.keyCode == 37 || e.keyCode == 65) {
     window.location = PP[0].href;
    } else if (e.keyCode == 96) {
-    FEATURED.toggle();
+    featured.toggle();
    }
   }, false);
  })();
