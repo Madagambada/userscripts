@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         mangakakalot hotkey
-// @version      0.0.1.1u
+// @version      0.0.1.2p
 // @description  mangakakalot hotkey
 // @author       Madagambada
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
@@ -11,19 +11,19 @@
 // @grant        none
 // ==/UserScript==
 
-if ($(".group_qty").length){
- var next = $(".page_select").next()[0].href;
- var prev = $(".page_select").prev()[0].href;
+if ($(".group-qty").length){
+ var next = $(".page-select").next()[0];
+ var prev = $(".page-select").prev()[0];
 } else {
- var next = $("a:contains('NEXT CHAPTER')")[0].href;
- var prev = $("a:contains('PREV CHAPTER')")[0].href;
+ var next = $("a:contains('NEXT CHAPTER')")[0];
+ var prev = $("a:contains('PREV CHAPTER')")[0];
 }
  (function() {
   document.addEventListener('keydown', function(e) {
    if (e.keyCode == 39 || e.keyCode == 68) {
-    window.location = next;
+    window.location = next.href;
    } else if (e.keyCode == 37 || e.keyCode == 65) {
-    window.location = prev;
+    window.location = prev.href;
    }
   }, false);
  })();
