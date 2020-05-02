@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        celebmasta-hotkey
-// @version     0.0.0.16d
+// @version     0.0.0.17f
 // @include     https://celebmasta.com*
 // @description Better celebmasta nvigation
 // @author      Madagambada
@@ -21,6 +21,7 @@ featured.toggle();
 $("img[alt*='sexy popular local sluts']").parent().empty();
 $("img[alt*='girls that want to fuck on snap']").parent().empty();
 $("img[alt*='Famous Adult Apps']").parent().empty();
+$("img[alt*='celebrity adult sex game']").parent().empty();
 
 //hotkey stuff
 if (RegExp('celebmasta.com/*/*/').test(window.location.href)) {
