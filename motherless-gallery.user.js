@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         motherless-gallery
-// @version      0.0.1.7t
-// @description  gallery for motherless.com
+// @version      0.0.1.8g
+// @description  View search results, favorites, groups and more in a gallery
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
