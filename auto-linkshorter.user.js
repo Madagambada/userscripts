@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         auto-linkshorter
-// @version      0.0.0.4p
+// @version      0.0.0.5p
 // @include        http://*
 // @include        https://*
 // @description  auto-linkshorter
@@ -61,28 +61,37 @@ if (document.title == 'Free Short URL Shortner - Shotly.io') {
    }
   }
  }
- if (document.title == 'Shrink your URLs and get paid!') {
-     window.addEventListener('load', function () {
-          if (RegExp('/ad/locked').test(window.location.href)) {
-              setTimeout(adfly_block, 9550);
-              console.log("block");
+if (document.title == 'Shorten.sh') {
+         setTimeout(shorten, 7550);
  }
-          setTimeout(adfly, 7550);
-     });
+  if (RegExp('bcvc.live/*').test(window.location.href)) {
+  setTimeout(bcvc, 7500);
  }
- if (document.title == 'Shorten.sh') {
-         setTimeout(shorten, 4550);
+
+if (RegExp('gdanstum.net/*').test(window.location.href)) {
+    setTimeout(adfly, 12000);
  }
 })();
 
-function shorten() {
-if ($("button:contains('Click here to continue')").length) {
-         $("#invisibleCaptchaShortlink").click();
-     } else {
-           var a_href = $("a:contains('Get Link')").attr('href');
-         window.location = a_href
-     }
+function adfly() {
+    console.log("meeeeeeeeeep");
+    var a_href = $("#skip_bu2tton").attr('href');
+    window.location = a_href
+}
 
+function bcvc() {
+    $("div[class*='container']").prepend('<script>$("#getLink").click();</script>');
+    $("#getLink").click();
+    $("#getLink").click();
+}
+
+function shorten() {
+    if (!$("a:contains('Get Link')").length) {
+        $("#invisibleCaptchaShortlink").click();
+        $("#invisibleCaptchaShortlink").click();
+    } else {
+            $("div[class*='navbar-header page-scroll']").prepend('<script>$("#get-link-ad").click();</script>');
+        }
 }
 function adfly_block() {
  var a_href = $("a:contains('Get Link')").attr('href');
@@ -102,11 +111,6 @@ function ShrinkEarn() {
   window.location = $("a[class*='btn btn-success btn-lg get-link']").attr('href');
  }
 }
-function adfly() {
- var a_href = $("a[class*='mwButton']").attr('href');
- window.location = a_href
-}
-
 function ouo() {
  $("#btn-main").click();
 }
