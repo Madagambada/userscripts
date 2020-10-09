@@ -1,6 +1,6 @@
-// ==UserScript==
+ // ==UserScript==
 // @name         motherless-gallery
-// @version      0.0.1.8g
+// @version      1.0.1.9u
 // @description  View search results, favorites, groups and more in a gallery
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
@@ -94,6 +94,7 @@ $("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
 				thumbnailHeight: 150,
 				thumbnailWidth: 150,
 				allowHTMLinData: true,
+				viewerGallery: "none",
 				viewerTools: {
 					topRight: 'label, rotateLeft, rotateRight, fullscreenButton, closeButton'
 				},
@@ -124,6 +125,9 @@ $("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
 				window.location = PP;
 			}
 		} else if (e.keyCode == 98 && galleryload == 1) {
+			if (window.location.href.search("#nanogallery/gallery_hook/0/") > 1) {
+				$('#gallery_hook').nanogallery2('closeViewer');
+			}
 			$('#gallery_hook').nanogallery2('displayItem', '0/1');
 		}
 	}, false);
