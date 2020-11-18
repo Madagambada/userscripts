@@ -27,3 +27,8 @@
 * Numpad 0 to activate the gallery
    * Numpad 2 to get into gallery mode, click on image works to
 * Numpad 1/3 to get to Next/previous site
+
+#### archived.moe-gallery:
+* Numpad 0 to activate the gallery
+   * Numpad 2 to get into gallery mode, click on image works to
+   
