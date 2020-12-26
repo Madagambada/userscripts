@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         auto-linkshorter
-// @version      0.0.0.5p
+// @version      1.0.0.0
 // @include        http://*
 // @include        https://*
 // @description  auto-linkshorter
@@ -24,6 +24,9 @@ if (document.title == 'ShrinkEarn') {
  }
 if (document.title == 'Free URL shorten service - ouo.press') {
   setTimeout(ouo, 4000);
+ }
+if (document.title == 'Schrumpfen Sie Ihre URLs und erhalten Sie Geld dafür!') {
+  setTimeout(adfly, 10000);
  }
 if (document.title == 'exe.io') {
   if ($(".link_ready")[0]) {
@@ -76,6 +79,7 @@ if (RegExp('gdanstum.net/*').test(window.location.href)) {
 function adfly() {
     console.log("meeeeeeeeeep");
     var a_href = $("#skip_bu2tton").attr('href');
+    console.log(a_href);
     window.location = a_href
 }
 
@@ -121,6 +125,7 @@ function exeio() {
   window.location = $(".procced").children().attr('href')
  }
  $("#invisibleCaptchaShortlink").click();
+    $("#submitbtn").children().click();
 
 }
 
