@@ -32,3 +32,5 @@
 * Numpad 0 to activate the gallery
    * Numpad 2 to get into gallery mode, click on image works to
    
+### ok.ru-user-id:
+* get user id of current live feed
