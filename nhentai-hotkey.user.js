@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        nhentai-hotkey
-// @version     1.0.0.3i
+// @version     1.0.0.4i
 // @include     https://nhentai.net/*
 // @description nhentai hotkey
 // @author      Madagambada
@@ -12,7 +12,7 @@
 //hotkey
 (function() {
  document.addEventListener('keydown', function(e) {
-   if (e.keyCode == 96) {
+   if (e.keyCode == 50) {
        if ($("a[class*='go-back']").length) {
            window.location = $("a[class*='go-back']").attr('href');
        } else if ($('#cover').length) {
@@ -27,6 +27,14 @@
        window.location = $("a[class*='previous']").attr('href')
    } else if (e.keyCode == 39 && $("a[class*='next']").length && $("a[class*='go-back']").length == 0) {
        window.location = $("a[class*='next']").attr('href')
+   } else if (e.keyCode == 65 && $("section[class*='pagination']").length) {
+       if ($("a[class*='page current']").prev().attr('href') != null) {
+           window.location = $("a[class*='page current']").prev().attr('href')
+       }
+   } else if (e.keyCode == 68 && $("section[class*='pagination']").length) {
+       if ($("a[class*='page current']").next().attr('href') != null) {
+           window.location = $("a[class*='page current']").next().attr('href')
+       }
    }
   }, false);
 })();
