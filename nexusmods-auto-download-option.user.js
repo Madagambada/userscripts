@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         nexusmods-auto-download-option
-// @version      0.0.0.1f
+// @version      1.0.1
 // @description  auto-download-option
 // @author       Madagambada
 // @match        https://www.nexusmods.com/*/mods/*?tab=files&file_id=*
-// @require      https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
+// @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/nexusmods-auto-download-option.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/nexusmods-auto-download-option.user.js
 // @grant        none

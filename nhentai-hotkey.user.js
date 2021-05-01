@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name        nhentai-hotkey
-// @version     1.0.0.4i
+// @version     1.0.1
 // @include     https://nhentai.net/*
 // @description nhentai hotkey
 // @author      Madagambada
-// @require     https://code.jquery.com/jquery-3.5.1.min.js
+// @require     https://code.jquery.com/jquery-3.6.0.min.js
 // @updateURL   https://github.com/Madagambada/userscripts/raw/master/nhentai-hotkey.user.js
 // @downloadURL https://github.com/Madagambada/userscripts/raw/master/nhentai-hotkey.user.js
 // ==/UserScript==

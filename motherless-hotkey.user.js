@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name        motherless-hotkey
-// @version     0.0.0.11o
+// @version     1.0.0
 // @match       https://motherless.com/G*/*
 // @match       https://motherless.com/g/*/*
 // @description Better motherless navigation
 // @author      Madagambada
-// @require     https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
+// @require     https://code.jquery.com/jquery-3.6.0.min.js
 // @updateURL   https://github.com/Madagambada/userscripts/raw/master/motherless-hotkey.user.js
 // @downloadURL https://github.com/Madagambada/userscripts/raw/master/motherless-hotkey.user.js
 // ==/UserScript==

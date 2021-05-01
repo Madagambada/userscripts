@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         archived.moe-gallery
-// @version      1.0.0.0
+// @version      1.0.1
 // @description  View thread images in a gallery
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/archived.moe-gallery.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/archived.moe-gallery.user.js
 // @match        https://archived.moe/*/thread/*
-// @require      https://code.jquery.com/jquery-3.5.1.min.js
+// @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @require      https://unpkg.com/nanogallery2/dist/jquery.nanogallery2.min.js
 // @resource     css https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css
 // @resource     font https://raw.githubusercontent.com/nanostudio-org/nanogallery2/master/src/css/nanogallery2.woff.css

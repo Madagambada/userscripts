@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         auto-linkshorter
-// @version      1.0.0.0
-// @include        http://*
-// @include        https://*
+// @version      1.0.0
 // @description  auto-linkshorter
 // @author       Madagambada
+// @namespace    https://github.com/Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/auto-linkshorter.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/auto-linkshorter.user.js
-// @require      https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
+// @include      http://*
+// @include      https://*
+// @require      https://code.jquery.com/jquery-3.6.0.min.js
 // ==/UserScript==
 
 (function() {

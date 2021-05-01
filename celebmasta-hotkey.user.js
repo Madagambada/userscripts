@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name        celebmasta-hotkey
-// @version     1.0.0
-// @include     https://www.celebmasta.com*
+// @version     1.0.1
 // @description Better celebmasta nvigation
 // @author      Madagambada
-// @require     https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+// @require     https://code.jquery.com/jquery-3.6.0.min.js
 // @require     https://github.com/js-cookie/js-cookie/releases/download/v2.2.1/js.cookie-2.2.1.min.js
 // @updateURL   https://github.com/Madagambada/userscripts/raw/master/celebmasta-hotkey.user.js
 // @downloadURL https://github.com/Madagambada/userscripts/raw/master/celebmasta-hotkey.user.js
+// @include     https://www.celebmasta.com*
 // ==/UserScript==
 
 // disable popup by click

@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         ok.ru-user-id
-// @version      1.0.0
+// @version      1.0.1
 // @author       Madagambada
 // @description  get user id
 // @namespace    https://github.com/Madagambada
-// @require      https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
+// @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @match        https://ok.ru/live/*
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/ok.ru-user-id.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/ok.ru-user-id.user.js

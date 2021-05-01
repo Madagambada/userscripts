@@ -34,3 +34,16 @@
    
 ### ok.ru-user-id:
 * get user id of current live feed
+
+### hiperdex-hotkey
+* use arrow key left/right to get on next page
+
+### kimochi.info-dlsite-link
+* Shows a dlsite link for that item (works not on all things)
+
+### liveomg-remove-sites
+* Removes specific sites
+
+### thebarchive-gallery
+* Numpad 0 to activate the gallery
+   * Numpad 2 to get into gallery mode, click on image works to
