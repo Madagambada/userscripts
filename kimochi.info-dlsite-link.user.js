@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         kimochi.info-dlsite-link
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/kimochi.info-dlsite-link.user.js
@@ -14,6 +14,16 @@
 
 (function() {
     var id = $("#info").children().children()[0].innerText.substring(4);
-    var link = `https://www.dlsite.com/maniax/work/=/product_id/${id}.html/`;
-    $("#info").children().prepend(`<a href="${link}"style="color:#17a2b8">>View on dlsite.com</a>`)
+    if (id.includes("RE") || id.includes("RJ")) {
+        if (id.includes(",")) {
+            if (id.split(',')[0].includes("RJ")) {
+                id = id.split(',')[0];
+            }
+            else {
+                id = id.split(',')[1].substring(1);
+            }
+        }
+        var link = `https://www.dlsite.com/maniax/work/=/product_id/${id}.html/`;
+        $("#info").children().prepend(`<a href="${link}"style="color:#17a2b8">>View on dlsite.com</a>`)
+    }
 })();
