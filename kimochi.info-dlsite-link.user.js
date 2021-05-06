@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         kimochi.info-dlsite-link
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/kimochi.info-dlsite-link.user.js
@@ -14,12 +14,12 @@
 
 (function() {
     var id = $("#info").children().children()[0].innerText.substring(4);
-    if (id.includes("RE") || id.includes("RJ")) {
+    if (id.includes("RE") || id.includes("RJ") || id.includes("VJ")) {
         if (id.includes(",")) {
             if (id.split(',')[0].includes("RJ")) {
                 id = id.split(',')[0];
             }
-            else {
+            else if (id.split(',')[1].includes("RJ"){
                 id = id.split(',')[1].substring(1);
             }
         }
