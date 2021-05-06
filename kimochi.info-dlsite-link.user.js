@@ -19,7 +19,7 @@
             if (id.split(',')[0].includes("RJ")) {
                 id = id.split(',')[0];
             }
-            else if (id.split(',')[1].includes("RJ"){
+            else if (id.split(',')[1].includes("RJ")) {
                 id = id.split(',')[1].substring(1);
             }
         }
