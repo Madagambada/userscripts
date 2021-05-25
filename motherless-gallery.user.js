@@ -1,12 +1,13 @@
  // ==UserScript==
 // @name         motherless-gallery
-// @version      1.0.1.9u
+// @version      1.0.2.0
 // @description  View search results, favorites, groups and more in a gallery
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/motherless-gallery.user.js
-// @require      https://code.jquery.com/jquery-3.5.1.min.js
+// @require      https://code.jquery.com/jquery-3.6.0.min.js
+// @require      https://unpkg.com/preload-it@latest/dist/preload-it.js
 // @require      https://unpkg.com/nanogallery2/dist/jquery.nanogallery2.min.js
 // @resource     css https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css
 // @resource     font https://raw.githubusercontent.com/nanostudio-org/nanogallery2/master/src/css/nanogallery2.woff.css
@@ -88,6 +89,8 @@ $("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
 				});
 			}
 
+			preload.fetch(data_url);
+			
 			//https://nanogallery2.nanostudio.org/
 			jQuery("#gallery_hook").nanogallery2({
 				// ### gallery settings ###
