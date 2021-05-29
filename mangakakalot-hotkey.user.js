@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         mangakakalot hotkey
-// @version      1.0.2
+// @version      1.0.3
 // @description  mangakakalot hotkey
 // @author       Madagambada
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/mangakakalot-hotkey.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/mangakakalot-hotkey.user.js
 // @match        https://manganelo.com/*
+// @match        https://readmanganato.com/*
 // @match        https://mangakakalot.com/*
 // @grant        GM_addStyle
 // ==/UserScript==
