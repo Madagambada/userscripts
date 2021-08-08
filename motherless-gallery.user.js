@@ -41,6 +41,7 @@ var title = [];
 var galleryload = 0;
 var NP = $("a[rel*='next']").attr('href');
 var PP = $("a[rel*='prev']").attr('href');
+const preload = Preload();
 // set hock on the page
 $("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
 
@@ -90,7 +91,7 @@ $("div[class*='content-inner']").prepend('<div id="gallery_hook"></div>');
 			}
 
 			preload.fetch(data_url);
-			
+
 			//https://nanogallery2.nanostudio.org/
 			jQuery("#gallery_hook").nanogallery2({
 				// ### gallery settings ###
