@@ -12,7 +12,7 @@
 //hotkey
 (function() {
  document.addEventListener('keydown', function(e) {
-   if (e.keyCode == 50) {
+   if (e.keyCode == 82) {
        if ($("a[class*='go-back']").length) {
            window.location = $("a[class*='go-back']").attr('href');
        } else if ($('#cover').length) {
