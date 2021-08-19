@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         liveomg-remove-sites
-// @version      1.0.1
+// @version      1.0.2
 // @description  Removes specific sites
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
@@ -21,6 +21,9 @@
     var Array3 = $("span:contains('liveme.com')").map(function() {
         return $(this);
     }).get();
+    var Array4 = $("span:contains('twitch.tv')").map(function() {
+        return $(this);
+    }).get();
     //console.log(Array);
     for (var i = 0; i < Array.length; i++) {
         Array[i].parent().parent().remove()
@@ -30,5 +33,8 @@
     }
     for (var i = 0; i < Array3.length; i++) {
         Array3[i].parent().parent().remove()
+    }
+    for (var i = 0; i < Array4.length; i++) {
+        Array4[i].parent().parent().remove()
     }
 })();
