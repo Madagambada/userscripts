@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Revert Youtube Title Translation
 // @namespace    https://github.com/Madagambada
-// @version      1.0.0
+// @version      1.0.1
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/revert-youtube-title-translation.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/revert-youtube-title-translation.user.js
 // @description  Revert Youtube Title Translation
@@ -42,7 +42,7 @@ function ajax_call(title) {
                         data.indexOf("<title>") + 7,
                         data.lastIndexOf("</title>") -10
                     );
-                    console.log("Original Title: " + jQuery(title)[0].innerText);
+                    console.log("Current Title: " + jQuery(title)[0].innerText);
                     jQuery(title)[0].innerText = htmlUnescape(mySubString);
                     document.title = jQuery(title)[0].innerText + " - YouTube";
                     console.log("Changed to: " + jQuery(title)[0].innerText);
