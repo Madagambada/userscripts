@@ -1,51 +1,98 @@
 // ==UserScript==
 // @name         Revert Youtube Title Translation
 // @namespace    https://github.com/Madagambada
-// @version      1.0.1
+// @version      1.0.2
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/revert-youtube-title-translation.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/revert-youtube-title-translation.user.js
 // @description  Revert Youtube Title Translation
 // @author       Madagambada
-// @match        https://www.youtube.com/watch?v=*
+// @include      https://www.youtube.com/watch*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
 // @require      https://code.jquery.com/jquery-3.6.0.min.js
-// @require      https://gist.github.com/raw/2625891/waitForKeyElements.js
 // @grant        none
 // ==/UserScript==
 
-waitForKeyElements (
-            "h1.title.style-scope.ytd-video-primary-info-renderer"
-            , commentCallbackFunction
-        );
+var title = "";
+var timer = 0;
 
-function commentCallbackFunction (jNode) {
-    var search = jQuery('.style-scope.ytd-video-primary-info-renderer');
+changeTitle();
 
-    for (var i = 0; i < search.length; i++) {
-        if (jQuery(search[i]).parent()[0].className == 'title style-scope ytd-video-primary-info-renderer') {
-            var title = search[i];
-            ajax_call(title);
+let lastUrl = location.href;
+new MutationObserver(() => {
+  const url = location.href;
+  if (url !== lastUrl) {
+    lastUrl = url;
+    title = "";
+    ajaxCall();
+    var checkExist2 = setInterval(function() {
+        if ($('yt-formatted-string.style-scope.ytd-video-primary-info-renderer').length > 0 && title != "") {
+            for (var i = 0; i < $('yt-formatted-string.style-scope.ytd-video-primary-info-renderer').length; i++) {
+                if (jQuery($('yt-formatted-string.style-scope.ytd-video-primary-info-renderer')[i]).parent()[0].className == 'title style-scope ytd-video-primary-info-renderer') {
+                    var classTitle = $('yt-formatted-string.style-scope.ytd-video-primary-info-renderer')[i];
+                    clearInterval(checkExist2);
+                    console.log("Current Title: " + classTitle.innerText);
+                    classTitle.innerText = title;
+                    document.title = title + " - YouTube";
+                    console.log("Changed to: " + title);
+                    doubleChecker(title, classTitle);
+                    title = "";
+                }
+            }
         }
-    }
+    }, 100); // check every 100ms
+  }
+}).observe(document, {subtree: true, childList: true});
+
+function changeTitle(){
+    ajaxCall();
+    var checkExist1 = setInterval(function() {
+        if ($('yt-formatted-string.style-scope.ytd-video-primary-info-renderer').length > 0 && title != "") {
+            for (var i = 0; i < $('yt-formatted-string.style-scope.ytd-video-primary-info-renderer').length; i++) {
+                if (jQuery($('yt-formatted-string.style-scope.ytd-video-primary-info-renderer')[i]).parent()[0].className == 'title style-scope ytd-video-primary-info-renderer') {
+                    clearInterval(checkExist1);
+                    var classTitle = $('yt-formatted-string.style-scope.ytd-video-primary-info-renderer')[i];
+                    console.log("Current Title: " + classTitle.innerText);
+                    classTitle.innerText = title;
+                    document.title = title + " - YouTube";
+                    console.log("Changed to: " + title);
+                    doubleChecker(title, classTitle);
+                    title = "";
+                }
+            }
+        }
+    }, 100); // check every 100ms
 }
 
+function doubleChecker(str, cl) {
+    var checkExist3 = setInterval(function() {
+        timer++;
+        if (timer >= 50) {
+            clearInterval(checkExist3);
+            timer = 0;
+        }
+        if (cl.innerText.length != str.length) {
+            clearInterval(checkExist3);
+            timer = 0;
+            $(cl).empty();
+            console.log("(Fix)Current Title: " + cl.innerText);
+            cl.innerText = str;
+            document.title = str + " - YouTube";
+            console.log("(Fix)Changed to: " + str);
+        }
+    }, 100); // check every 100ms
+}
 
-function ajax_call(title) {
+function ajaxCall() {
 	return new Promise(function(resolve, reject) {
 		let xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if(this.readyState == 4) {
 				if(this.status == 200) {
-                    const responseDocument = new DOMParser().parseFromString(xhttp.responseText, "text/html");
-                    var data = xhttp.responseText
-                    var mySubString = data.substring(
-                        data.indexOf("<title>") + 7,
-                        data.lastIndexOf("</title>") -10
+                    var mySubString = xhttp.responseText.substring(
+                        xhttp.responseText.indexOf("\"og:title\" content=\"") + 20,
+                        xhttp.responseText.lastIndexOf("meta property=\"og:image\"") -3
                     );
-                    console.log("Current Title: " + jQuery(title)[0].innerText);
-                    jQuery(title)[0].innerText = htmlUnescape(mySubString);
-                    document.title = jQuery(title)[0].innerText + " - YouTube";
-                    console.log("Changed to: " + jQuery(title)[0].innerText);
+                    title = htmlUnescape(mySubString);
 					return;
                 }
 				else {
