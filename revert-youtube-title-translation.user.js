@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Revert Youtube Title Translation
 // @namespace    https://github.com/Madagambada
-// @version      1.0.2
+// @version      1.0.3
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/revert-youtube-title-translation.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/revert-youtube-title-translation.user.js
 // @description  Revert Youtube Title Translation
@@ -20,7 +20,7 @@ changeTitle();
 let lastUrl = location.href;
 new MutationObserver(() => {
   const url = location.href;
-  if (url !== lastUrl) {
+  if (url !== lastUrl && url.includes("/watch")) {
     lastUrl = url;
     title = "";
     ajaxCall();
