@@ -1,40 +1,43 @@
 // ==UserScript==
 // @name        nhentai-hotkey
-// @version     1.0.1
+// @version     1.0.2
 // @include     https://nhentai.net/*
 // @description nhentai hotkey
 // @author      Madagambada
-// @require     https://code.jquery.com/jquery-3.6.0.min.js
+// @require     https://code.jquery.com/jquery-3.6.1.min.js
 // @updateURL   https://github.com/Madagambada/userscripts/raw/master/nhentai-hotkey.user.js
 // @downloadURL https://github.com/Madagambada/userscripts/raw/master/nhentai-hotkey.user.js
 // ==/UserScript==
 
-//hotkey
+var search = $(".search").children()[0];
+var pagination = $(".pagination").children();
+
 (function() {
- document.addEventListener('keydown', function(e) {
-   if (e.keyCode == 82) {
-       if ($("a[class*='go-back']").length) {
-           window.location = $("a[class*='go-back']").attr('href');
-       } else if ($('#cover').length) {
-           if (window.location.href.search("#comment") > 0) {
-               window.location = window.location.href.split('#')[0]+"1";
-           } else {
-               window.location = window.location.href+"1";
-           }
-       }
-   }
-   if (e.keyCode == 37 && $("a[class*='previous']").length && $("a[class*='go-back']").length == 0) {
-       window.location = $("a[class*='previous']").attr('href')
-   } else if (e.keyCode == 39 && $("a[class*='next']").length && $("a[class*='go-back']").length == 0) {
-       window.location = $("a[class*='next']").attr('href')
-   } else if (e.keyCode == 65 && $("section[class*='pagination']").length) {
-       if ($("a[class*='page current']").prev().attr('href') != null) {
-           window.location = $("a[class*='page current']").prev().attr('href')
-       }
-   } else if (e.keyCode == 68 && $("section[class*='pagination']").length) {
-       if ($("a[class*='page current']").next().attr('href') != null) {
-           window.location = $("a[class*='page current']").next().attr('href')
-       }
-   }
-  }, false);
+    $(document).keydown(function(data) {
+        if (!$(search).is(':focus')) {
+            if (data.code == "Numpad1") {
+                if (pagination.length) {
+                    for (var i = 0; i < pagination.length; i++) {
+                        if (pagination[i].className == "page current" && i != 0) {
+                            window.location = pagination[i - 1].href;
+                        }
+                    }
+                }
+            } else if (data.code == "Numpad3") {
+                if (pagination.length) {
+                    for (var i = 0; i < pagination.length; i++) {
+                        if (pagination[i].className == "page current" && i != (pagination.length - 2)) {
+                            window.location = pagination[i + 1].href;
+                        }
+                    }
+                }
+            } else if (data.code == "KeyR") {
+                if ($('#thumbnail-container').length) {
+                   window.location = $('.thumb-container').children()[0].href;
+                } else if ($('#image-container').length) {
+                    window.location = $('.go-back')[0].href;
+                }
+            }
+        }
+    });
 })();
