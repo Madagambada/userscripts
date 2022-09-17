@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         liveomg-remove-sites
-// @version      1.0.2
+// @version      1.0.4
 // @description  Removes specific sites
 // @author       Madagambada
 // @namespace    https://github.com/Madagambada
