@@ -5,7 +5,7 @@
 // @namespace    https://github.com/Madagambada
 // @updateURL    https://github.com/Madagambada/userscripts/raw/master/ok-cp.user.js
 // @downloadURL  https://github.com/Madagambada/userscripts/raw/master/ok-cp.user.js
-// @version      1.0.1
+// @version      1.0.2
 // @author       Madagambada
 // @match        https://ok.ru/live/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ok.ru
@@ -61,23 +61,26 @@ function ajax_call(btn, command) {
                 if (command.includes('c ')) {
                     if (response.responseText.includes('not in the database')) {
                         btn.innerHTML = "Not in the database";
-                        addGlobalStyle('.' + btn.className + ' {background-color: #ff3333;}');
+                        addGlobalStyle('.' + btn.className + ' {background-color: #cc0000;}');
                     } else if (response.responseText.includes('in the database')) {
                         btn.innerHTML = "In the database";
-                        addGlobalStyle('.' + btn.className + ' {background-color: #00cc00;}');
+                        addGlobalStyle('.' + btn.className + ' {background-color: #339966;}');
                     } else {
                         btn.innerHTML = response.responseText;
                     }
                 } else if (command.includes('a ')) {
                    if (response.responseText.includes('not a valid User-ID')) {
                         btn.innerHTML = "Not a valid User-ID";
-                        addGlobalStyle('.' + btn.className + ' {background-color: #ff3333;}');
+                        addGlobalStyle('.' + btn.className + ' {background-color: #cc0000;}');
                     } else if (response.responseText.includes('added to the database and downloading')) {
                         btn.innerHTML = "Added and downloading";
-                        addGlobalStyle('.' + btn.className + ' {background-color: #00cc00;}');
+                        addGlobalStyle('.' + btn.className + ' {background-color: #339966;}');
                     } else if (response.responseText.includes('added to the database')) {
                         btn.innerHTML = "Added to the database";
-                        addGlobalStyle('.' + btn.className + ' {background-color: #00cc00;}');
+                        addGlobalStyle('.' + btn.className + ' {background-color: #339966;}');
+                    } else if (response.responseText.includes('already in the database')) {
+                        btn.innerHTML = "Already in the database";
+                        addGlobalStyle('.' + btn.className + ' {background-color: #339966;}');
                     } else {
                         btn.innerHTML = response.responseText;
                     }
