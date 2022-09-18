@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        nhentai-hotkey
-// @version     1.0.2
+// @version     1.0.3
 // @include     https://nhentai.net/*
 // @description nhentai hotkey
 // @author      Madagambada
@@ -15,7 +15,7 @@ var pagination = $(".pagination").children();
 (function() {
     $(document).keydown(function(data) {
         if (!$(search).is(':focus')) {
-            if (data.code == "Numpad1") {
+            if (data.code == "Numpad1" || data.code == "KeyA") {
                 if (pagination.length) {
                     for (var i = 0; i < pagination.length; i++) {
                         if (pagination[i].className == "page current" && i != 0) {
@@ -23,7 +23,7 @@ var pagination = $(".pagination").children();
                         }
                     }
                 }
-            } else if (data.code == "Numpad3") {
+            } else if (data.code == "Numpad3" || data.code == "KeyD") {
                 if (pagination.length) {
                     for (var i = 0; i < pagination.length; i++) {
                         if (pagination[i].className == "page current" && i != (pagination.length - 2)) {
