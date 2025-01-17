@@ -57,6 +57,7 @@ function ajax_call(url) {
         xhttp.onreadystatechange = function() {
             if(this.readyState == 4) {
                 if(this.status == 200) {
+                    //console.log(xhttp.responseText);
                     var obj = jQuery.parseJSON( xhttp.responseText );
                     var file_url = [], preview_url = [], titleurl = [], final = [];
                     for (var i = 0; i < obj.post.length;i++) {
@@ -106,6 +107,7 @@ function ajax_call(url) {
 function myToolbarCustClick(customElementName, $customIcon, item) {
     if( customElementName == 'custom1' ) {
         addFav(item.title);
+        post_vote(item.title, 'up');
     } else if (customElementName == 'custom2') {
         post_vote(item.title, 'up');
     } else if (customElementName == 'custom3') {
